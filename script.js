@@ -85,6 +85,9 @@ function tallScreen(vw, vh) {
 function resize() {
     var vw = $(window).width();
     var vh = $(window).height();
+    
+    $("#sidebar").css("font-size", Math.sqrt(vw * vh) / 8);
+    
     if (vw > vh) {
         wideScreen(vw, vh);
     } else {
@@ -114,7 +117,7 @@ class Card {
         } else if (this.color == "red") {
             return ("hue-rotate(235deg)");
         } else {
-            return ("hue-rotate(140deg)");
+            return ("hue-rotate(130deg)");
         }
     }
 
