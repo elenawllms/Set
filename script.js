@@ -86,7 +86,7 @@ function resize() {
     var vw = $(window).innerWidth();
     var vh = $(window).innerHeight();
     
-    $("#sidebar").css("font-size", Math.sqrt(vw * vh) / 8);
+    $("#sidebar").css("font-size", Math.sqrt(vw * vh) / 30);
     
     if (vw > vh) {
         wideScreen(vw, vh);
