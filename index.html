@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Set | Play Set Online</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="script.js"></script>
+    </head>
+    <body onload="resize()" onresize="resize()">
+        <div id="play-area-wrapper">
+            <div id="play-area">
+                <div id="board">
+                    <div class="card" id="0" onclick="cardClicked(this, 0)"></div>
+                    <div class="card" id="1" onclick="cardClicked(this, 1)"></div>
+                    <div class="card" id="2" onclick="cardClicked(this, 2)"></div>
+                    <div class="card" id="3" onclick="cardClicked(this, 3)"></div>
+                    <div class="card" id="4" onclick="cardClicked(this, 4)"></div>
+                    <div class="card" id="5" onclick="cardClicked(this, 5)"></div>
+                    <div class="card" id="6" onclick="cardClicked(this, 6)"></div>
+                    <div class="card" id="7" onclick="cardClicked(this, 7)"></div>
+                    <div class="card" id="8" onclick="cardClicked(this, 8)"></div>
+                    <div class="card" id="9" onclick="cardClicked(this, 9)"></div>
+                    <div class="card" id="10" onclick="cardClicked(this, 10)"></div>
+                    <div class="card" id="11" onclick="cardClicked(this, 11)"></div>
+                    
+                </div>
+                <div id="sidebar">
+                    <div id="setOrNot">Select three items to check whether they're a set.</div>
+                    <div>Sets Found: <span id="noOfSets">0</span></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
