@@ -85,6 +85,7 @@ function tallScreen(vw, vh) {
 function resize() {
     var vw = $(window).innerWidth();
     var vh = $(window).innerHeight();
+    $("#play-area-wrapper").height(vh);
     $("body").height(vh);
     $("body").width(vw);
     
