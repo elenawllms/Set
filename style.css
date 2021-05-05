@@ -1,0 +1,88 @@
+body {
+    background: #eee;
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+#play-area-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+}
+
+#play-area {
+    /* Aesthetics */
+    background: white;
+    box-shadow: 0 10px 15px 5px #0004;
+    border-radius: 5px;
+    
+    /* Internal Contents */
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+#sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px 0px;
+}
+
+/* #sidebar div {
+    padding: 10px 0;
+} */
+
+#setOrNot {
+    background: #eee;
+    color: grey;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+}
+
+
+
+/* CARDS */
+
+.card {
+    border-radius: 5px;
+    /* box-shadow: 0 5px 7.5px 5px #0002; */
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: background 0.25s;
+
+    /* Align images */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20%;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.card img {
+    width: 100%;
+}
+
+.card:hover {
+    background: #eee;
+}
+
+.card.checked {
+    background: #ddd;
+}
