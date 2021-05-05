@@ -160,7 +160,6 @@ function newCard() {
 }
 
 function isSetProperty(val1, val2, val3) {
-    console.log(val1, val2, val3);
     if ((val1 == val2) && (val2 == val3)) {
         return true;
         
@@ -171,16 +170,6 @@ function isSetProperty(val1, val2, val3) {
 }
 
 function isSet(card1, card2, card3) {
-    // if (!(isSetProperty(card1.shape, card2.shape, card3.shape))) {
-    //     return false;
-    // } else if (!(isSetProperty(card1.fill, card2.fill, card3.fill))) {
-    //     return false;
-    // } else if (!(isSetProperty(card1.number, card2.number, card3.number))) {
-    //     return false;
-    // } else if (!(isSetProperty(card1.color, card2.color, card3.color))) {
-    //     return false;
-    // }
-
     var properties = ["shape", "fill", "number", "color"];
     for (var i = 0; i < 4; i++) {
         var p = properties[i];
@@ -197,7 +186,6 @@ function isSetPossible() {
         for (var j = i+1; j < cardsOnBoard.length; j++) {
             for (var k = j+1; k < cardsOnBoard.length; k++) {
                 if (isSet(cardsOnBoard[i], cardsOnBoard[j], cardsOnBoard[k])) {
-                    console.log(i, j, k);
                     return true;
                 }
             }
@@ -219,9 +207,9 @@ function shuffleBoard() {
             cardsOnBoard.push(card);
             card.createGraphic(this);
         })
-        console.log("shuffled");
     }
     while (!isSetPossible());
+
 }
 
 
@@ -232,6 +220,20 @@ $(document).ready(function() {
 });
 
 
+function replaceCards(checkedDiv, ids) {
+    do {
+        for (var i = 0; i < 3; i++) {
+            do {
+                card = newCard()
+            }
+            while (card.isOnBoard());
+            cardsOnBoard[ids[i]] = card;
+            card.createGraphic(checkedDiv[i]);
+        }
+    }
+    while (!isSetPossible());
+
+}
 
 
 /* USER INTERACTIONS */
@@ -246,16 +248,28 @@ function cardClicked(cardDiv) {
         $(".checked").each(function() {
             ids.push(Number($(this).attr("id")));
         });
-        console.log(ids);
 
         if (isSet(cardsOnBoard[ids[0]], cardsOnBoard[ids[1]], cardsOnBoard[ids[2]])) {
-            console.log("yup!");
+
+            // Success message
+            $("#setOrNot").html("Found a set!");
+            $("#setOrNot").css("color", "green");
+            $("#setOrNot").css("background", "#B0E9BF");
+
+            $("#noOfSets").html(Number($("#noOfSets").html()) + 1)
+
+            replaceCards(checkedDiv, ids);
+
+
         } else {
-            console.log("nope");
-            $(".checked").each(function() {
-                $(this).toggleClass("checked");
-            });
+            $("#setOrNot").html("Oops! That one's not a set. Try again.");
+            $("#setOrNot").css("background", "#FFAFB1");
+            $("#setOrNot").css("color", "#C6272B");
+
         }
+        $(".checked").each(function() {
+            $(this).toggleClass("checked");
+        });
     }
 
     
