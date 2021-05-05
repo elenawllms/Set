@@ -83,8 +83,8 @@ function tallScreen(vw, vh) {
 }
 
 function resize() {
-    var vw = $(window).width();
-    var vh = $(window).height();
+    var vw = $(window).innerWidth();
+    var vh = $(window).innerHeight();
     
     $("#sidebar").css("font-size", Math.sqrt(vw * vh) / 8);
     
