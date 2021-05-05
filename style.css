@@ -3,6 +3,8 @@ body {
     font-family: Arial;
     margin: 0;
     padding: 0;
+    max-height: 100vh;
+    max-width: 100vw;
 }
 
 * {
