@@ -8,9 +8,11 @@ function isRestrictedByWidth(maxPossibleSizes) {
     return (Math.min(...maxPossibleSizes) == maxPossibleSizes[0]);
 }
 
+var ratioOfPlayArea = 1.3;
+
 function wideScreen(vw, vh) {
 
-    const ratioOfPlayArea = 1.3;
+    ratioOfPlayArea = 1.3;
     var ratioOfSidebar = 1 / (ratioOfPlayArea - (1 / ratioOfBoard));
     var maxPossibleSizes = [0.8 * vw / ratioOfPlayArea, 0.8 * vh];
 
@@ -47,7 +49,7 @@ function wideScreen(vw, vh) {
 }
 
 function tallScreen(vw, vh) {
-    const ratioOfPlayArea = 1.4;
+    ratioOfPlayArea = 1.5;
     var ratioOfSidebar = ratioOfPlayArea - ratioOfBoard;
     var maxPossibleSizes = [0.8 * vw, 0.8 * vh / ratioOfPlayArea];
 
