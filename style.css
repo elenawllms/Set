@@ -85,8 +85,10 @@ h1 {
     width: 100%;
 }
 
-.card:hover {
-    background: #eee;
+@media (hover: hover) and (pointer: fine) {
+    .card:hover {
+        background: #eee;
+    }
 }
 
 .card.checked {
