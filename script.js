@@ -14,7 +14,7 @@ function wideScreen(vw, vh) {
 
     ratioOfPlayArea = 1.3;
     var ratioOfSidebar = 1 / (ratioOfPlayArea - (1 / ratioOfBoard));
-    var maxPossibleSizes = [0.8 * vw / ratioOfPlayArea, 0.8 * vh];
+    var maxPossibleSizes = [vw / ratioOfPlayArea, 0.9 * vh];
 
     if (isRestrictedByWidth(maxPossibleSizes)) {
         var width = maxPossibleSizes[0] * ratioOfPlayArea;
@@ -51,7 +51,7 @@ function wideScreen(vw, vh) {
 function tallScreen(vw, vh) {
     ratioOfPlayArea = 1.5;
     var ratioOfSidebar = ratioOfPlayArea - ratioOfBoard;
-    var maxPossibleSizes = [0.8 * vw, 0.8 * vh / ratioOfPlayArea];
+    var maxPossibleSizes = [vw, 0.9 * vh / ratioOfPlayArea];
 
     if (isRestrictedByWidth(maxPossibleSizes)) {
         var width = maxPossibleSizes[0];
