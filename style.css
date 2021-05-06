@@ -1,5 +1,6 @@
 body {
-    background: #eee;
+/*     background: #eee; */
+    background: white;
     font-family: Arial;
     margin: 0;
     padding: 0;
@@ -24,7 +25,7 @@ h1 {
 #play-area {
     /* Aesthetics */
     background: white;
-    box-shadow: 0 10px 15px 5px #0004;
+/*     box-shadow: 0 10px 15px 5px #0004; */
     border-radius: 5px;
     
     /* Internal Contents */
